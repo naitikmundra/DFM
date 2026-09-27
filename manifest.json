@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Digital Footprint Monitor",
+  "short_name": "Footprint",
+  "version": "1.0.0",
+  "description": "Tracks estimated data usage per website and the energy, water and CO2e footprint of your browsing.",
+  "permissions": ["storage", "tabs", "webRequest", "alarms"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Digital Footprint Monitor",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

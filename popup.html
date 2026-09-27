@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digital Footprint Monitor</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">
+        <span class="live-dot" id="liveDot"></span>
+        <h1>Digital Footprint</h1>
+      </div>
+      <div class="status">
+        <div id="elapsedLabel">since Chrome start</div>
+        <div id="elapsed">00:00</div>
+      </div>
+    </header>
+
+    <div class="active-site">
+      <span>current tab</span>
+      <span class="host" id="activeHost">&mdash;</span>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" id="btnSession" data-view="session">Session</button>
+      <button class="tab-btn" id="btnAllTime" data-view="all_time">All&nbsp;time</button>
+    </div>
+
+    <section>
+      <div class="network-row">
+        <div class="network-cell">
+          <div class="label">Download</div>
+          <div class="value" id="download">0 B</div>
+        </div>
+        <div class="network-cell">
+          <div class="label">Upload</div>
+          <div class="value" id="upload">0 B</div>
+        </div>
+        <div class="network-cell">
+          <div class="label">Total</div>
+          <div class="value" id="total">0 B</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-title">Estimated environmental impact</p>
+      <div class="impact-row">
+        <div class="gauge" style="--gauge-color: var(--energy)">
+          <div class="label">&#9889; Energy</div>
+          <div><span class="value" id="energy">0.0000</span><span class="unit">kWh</span></div>
+          <div class="track"><div class="fill" id="energyFill"></div></div>
+        </div>
+        <div class="gauge" style="--gauge-color: var(--water)">
+          <div class="label">&#128167; Water</div>
+          <div><span class="value" id="water">0.000</span><span class="unit">L</span></div>
+          <div class="track"><div class="fill" id="waterFill"></div></div>
+        </div>
+        <div class="gauge" style="--gauge-color: var(--carbon)">
+          <div class="label">&#127757; CO&#8322;e</div>
+          <div><span class="value" id="co2">0.00</span><span class="unit">g</span></div>
+          <div class="track"><div class="fill" id="co2Fill"></div></div>
+        </div>
+      </div>
+      <div class="formula-note" id="formulaNote"></div>
+    </section>
+
+    <section>
+      <p class="section-title">Websites</p>
+      <div class="col-headers">
+        <span>Site</span><span>Down</span><span>Up</span><span>CO&#8322;e</span>
+      </div>
+      <div class="site-list" id="siteList">
+        <div class="empty-state">Waiting for traffic&hellip;</div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="note" id="footerNote">&nbsp;</div>
+      <button id="resetBtn" title="Clear all-time history">Reset all-time</button>
+    </footer>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
